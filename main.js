@@ -108,12 +108,11 @@ elixer_all[26000055]=7
 elixer_all[26000069]=4
 elixer_all[26000072]=5
 elixer_all[26000074]=4
-
-
 function img(c,d){
 	if(show.indexOf(c) === -1){
 		card_name.push(d)
 		show.push(c)
+		// alert(card_name)
 		elixer.push(elixer_all[c])
 		card0 = show[0]+".png";
 		card1 = show[1]+".png";
@@ -154,10 +153,31 @@ function img(c,d){
 			elixer_number += Number(elixer[a])
 		}
 		document.getElementById("elixer").innerText = Math.round(Number(elixer_number)/Number(elixer.length)*10)/10
+		//4カードサイクル
+		if(elixer.length>3){
+			elixer2 = elixer
+			elixer2.sort()
+			document.getElementById("cycle").innerText =elixer2[0]+elixer2[1]+elixer2[2]+elixer2[3]
+		}
 	}
 }
+
+
+//初期設定(ローカルストレージから前回までのやつ更新)
+number = localStorage.getItem("number")
+for(f=0;f<number;f++){
+	g=localStorage.getItem(f)
+	h=document.getElementById(g).name
+	img(g,h)
+}
+
+
 document.getElementById("search").addEventListener("click", function () {
-    
+	localStorage.clear()
+	for(e=0;e<show.length;e++){
+        localStorage.setItem(e,show[e])
+		localStorage.setItem("number",show.length)
+    }
     search_href = "https://royaleapi.com/decks/popular?time=7d&sort=rating&size=20&players=PvP&min_trophies=0&max_trophies=10000&min_elixir=1&max_elixir=9&min_cycle_elixir=4&max_cycle_elixir=28&mode=detail&type=NormalBattle&"
     // inc=skeletons&inc=ice-spirit&&global_exclude=false
     for(b=0;b<card_name.length;b++){
@@ -165,6 +185,7 @@ document.getElementById("search").addEventListener("click", function () {
     }
     search_href += "&global_exclude=false"
     location = search_href
+
 }, false);
 document.getElementById("1_delete").addEventListener("click", function () {
 	card_name.splice(-1,1);
@@ -190,11 +211,15 @@ document.getElementById("1_delete").addEventListener("click", function () {
         let img_7 = document.getElementById("img_7");
         img_7.src = card;
         document.getElementById("elixer").innerText = ""
+		document.getElementById("cycle").innerText = ""
+	
     }
 }, false);
 document.getElementById("all_delete").addEventListener("click", function () {
+	localStorage.clear()
 	show=[];
     elixer=[];
+	card_name =[];
     card = "white.png";
     let img_0 = document.getElementById("img_0");
     img_0.src = card;
@@ -213,6 +238,7 @@ document.getElementById("all_delete").addEventListener("click", function () {
     let img_7 = document.getElementById("img_7");
     img_7.src = card;
     document.getElementById("elixer").innerText = ""
+	document.getElementById("cycle").innerText =""
     // img()
 }, false);
 document.getElementById("26000010").addEventListener("click", function () {
