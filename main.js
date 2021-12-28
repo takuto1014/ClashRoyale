@@ -111,14 +111,14 @@ elixer_all[26000074]=5
 
 
 function img(){
-    card0 = "img/"+show[0]+".png";
-    card1 = "img/"+show[1]+".png";
-    card2 = "img/"+show[2]+".png";
-    card3 = "img/"+show[3]+".png";
-    card4 = "img/"+show[4]+".png";
-    card5 = "img/"+show[5]+".png";
-    card6 = "img/"+show[6]+".png";
-    card7 = "img/"+show[7]+".png";
+    card0 = show[0]+".png";
+    card1 = show[1]+".png";
+    card2 = show[2]+".png";
+    card3 = show[3]+".png";
+    card4 = show[4]+".png";
+    card5 = show[5]+".png";
+    card6 = show[6]+".png";
+    card7 = show[7]+".png";
 
     let img_0 = document.getElementById("img_0");
     img_0.src = card0;
@@ -162,11 +162,31 @@ document.getElementById("1_delete").addEventListener("click", function () {
 	show.splice(-1,1);
     elixer.splice(-1,1);
     img()
+    if(show.length==0){  
+        card = "white.png";
+        let img_0 = document.getElementById("img_0");
+        img_0.src = card;
+        let img_1 = document.getElementById("img_1");
+        img_1.src = card;
+        let img_2 = document.getElementById("img_2");
+        img_2.src = card;
+        let img_3 = document.getElementById("img_3");
+        img_3.src = card;
+        let img_4 = document.getElementById("img_4");
+        img_4.src = card;
+        let img_5 = document.getElementById("img_5");
+        img_5.src = card;
+        let img_6 = document.getElementById("img_6");
+        img_6.src = card;
+        let img_7 = document.getElementById("img_7");
+        img_7.src = card;
+        document.getElementById("elixer").innerText = ""
+    }
 }, false);
 document.getElementById("all_delete").addEventListener("click", function () {
 	show=[];
     elixer=[];
-    card = "img/white.png";
+    card = "white.png";
     let img_0 = document.getElementById("img_0");
     img_0.src = card;
     let img_1 = document.getElementById("img_1");
