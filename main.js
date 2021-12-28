@@ -146,11 +146,14 @@ function img(c,d){
 		if(elixer.length==9){
 			elixer.splice(-1,1);
 		}
+		if(card_name.length==9){
+			card_name.splice(-1,1);
+		}
 		elixer_number = 0
 		for(a=0;a<elixer.length;a++){
 			elixer_number += Number(elixer[a])
 		}
-		document.getElementById("elixer").innerText = Number(elixer_number)/Number(elixer.length)
+		document.getElementById("elixer").innerText = Math.round(Number(elixer_number)/Number(elixer.length)*10)/10
 	}
 }
 document.getElementById("search").addEventListener("click", function () {
