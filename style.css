@@ -4,3 +4,8 @@ button.button{
 a.cycle{
     margin-left: 15px;
 }
+a.text{
+    font-size:1.5em;
+    color: rgb(255, 0, 208);
+    font-weight: bold;
+}
