@@ -106,8 +106,8 @@ elixer_all[26000033]=6
 elixer_all[26000029]=7
 elixer_all[26000055]=7
 elixer_all[26000069]=4
-elixer_all[26000072]=4
-elixer_all[26000074]=5
+elixer_all[26000072]=5
+elixer_all[26000074]=4
 
 
 function img(){
@@ -150,6 +150,7 @@ function img(){
     
 }
 document.getElementById("search").addEventListener("click", function () {
+    
     search_href = "https://royaleapi.com/decks/popular?time=7d&sort=rating&size=20&players=PvP&min_trophies=0&max_trophies=10000&min_elixir=1&max_elixir=9&min_cycle_elixir=4&max_cycle_elixir=28&mode=detail&type=NormalBattle&"
     // inc=skeletons&inc=ice-spirit&&global_exclude=false
     for(b=0;b<card_name.length;b++){
@@ -159,7 +160,8 @@ document.getElementById("search").addEventListener("click", function () {
     location = search_href
 }, false);
 document.getElementById("1_delete").addEventListener("click", function () {
-	show.splice(-1,1);
+	card_name.splice(-1,1);
+    show.splice(-1,1);
     elixer.splice(-1,1);
     img()
     if(show.length==0){  
