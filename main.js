@@ -110,44 +110,48 @@ elixer_all[26000072]=5
 elixer_all[26000074]=4
 
 
-function img(){
-    card0 = show[0]+".png";
-    card1 = show[1]+".png";
-    card2 = show[2]+".png";
-    card3 = show[3]+".png";
-    card4 = show[4]+".png";
-    card5 = show[5]+".png";
-    card6 = show[6]+".png";
-    card7 = show[7]+".png";
+function img(c,d){
+	if(show.indexOf(c) === -1){
+		card_name.push(d)
+		show.push(c)
+		elixer.push(elixer_all[c])
+		card0 = show[0]+".png";
+		card1 = show[1]+".png";
+		card2 = show[2]+".png";
+		card3 = show[3]+".png";
+		card4 = show[4]+".png";
+		card5 = show[5]+".png";
+		card6 = show[6]+".png";
+		card7 = show[7]+".png";
 
-    let img_0 = document.getElementById("img_0");
-    img_0.src = card0;
-    let img_1 = document.getElementById("img_1");
-    img_1.src = card1;
-    let img_2 = document.getElementById("img_2");
-    img_2.src = card2;
-    let img_3 = document.getElementById("img_3");
-    img_3.src = card3;
-    let img_4 = document.getElementById("img_4");
-    img_4.src = card4;
-    let img_5 = document.getElementById("img_5");
-    img_5.src = card5;
-    let img_6 = document.getElementById("img_6");
-    img_6.src = card6;
-    let img_7 = document.getElementById("img_7");
-    img_7.src = card7;
-    if(show.length==9){
-        show.splice(-1,1);
-    }
-    if(elixer.length==9){
-        elixer.splice(-1,1);
-    }
-    elixer_number = 0
-    for(a=0;a<elixer.length;a++){
-        elixer_number += Number(elixer[a])
-    }
-    document.getElementById("elixer").innerText = Number(elixer_number)/Number(elixer.length)
-    
+		let img_0 = document.getElementById("img_0");
+		img_0.src = card0;
+		let img_1 = document.getElementById("img_1");
+		img_1.src = card1;
+		let img_2 = document.getElementById("img_2");
+		img_2.src = card2;
+		let img_3 = document.getElementById("img_3");
+		img_3.src = card3;
+		let img_4 = document.getElementById("img_4");
+		img_4.src = card4;
+		let img_5 = document.getElementById("img_5");
+		img_5.src = card5;
+		let img_6 = document.getElementById("img_6");
+		img_6.src = card6;
+		let img_7 = document.getElementById("img_7");
+		img_7.src = card7;
+		if(show.length==9){
+			show.splice(-1,1);
+		}
+		if(elixer.length==9){
+			elixer.splice(-1,1);
+		}
+		elixer_number = 0
+		for(a=0;a<elixer.length;a++){
+			elixer_number += Number(elixer[a])
+		}
+		document.getElementById("elixer").innerText = Number(elixer_number)/Number(elixer.length)
+	}
 }
 document.getElementById("search").addEventListener("click", function () {
     
@@ -209,638 +213,532 @@ document.getElementById("all_delete").addEventListener("click", function () {
     // img()
 }, false);
 document.getElementById("26000010").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000010").name)
-    show.push(document.getElementById("26000010").value)
-	elixer.push(elixer_all[document.getElementById("26000010").value])
-	img()
+	value1 = document.getElementById("26000010").value
+	value2 = document.getElementById("26000010").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000030").addEventListener("click", function () {
-    card_name.push(document.getElementById("26000030").name)
-    show.push(document.getElementById("26000030").value)
-	elixer.push(elixer_all[document.getElementById("26000030").value])
-	img()
+    value1 = document.getElementById("26000030").value
+    value2 = document.getElementById("26000030").name
+    img(value1,value2)
 }, false);
 document.getElementById("26000031").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000031").name)
-	show.push(document.getElementById("26000031").value)
-	elixer.push(elixer_all[document.getElementById("26000031").value])
-	img()
+	value1 = document.getElementById("26000031").value
+	value2 = document.getElementById("26000031").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000084").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000084").name)
-	show.push(document.getElementById("26000084").value)
-	elixer.push(elixer_all[document.getElementById("26000084").value])
-	img()
+	value1 = document.getElementById("26000084").value
+	value2 = document.getElementById("26000084").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000002").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000002").name)
-	show.push(document.getElementById("26000002").value)
-	elixer.push(elixer_all[document.getElementById("26000002").value])
-	img()
+	value1 = document.getElementById("26000002").value
+	value2 = document.getElementById("26000002").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000013").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000013").name)
-	show.push(document.getElementById("26000013").value)
-	elixer.push(elixer_all[document.getElementById("26000013").value])
-	img()
+	value1 = document.getElementById("26000013").value
+	value2 = document.getElementById("26000013").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000019").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000019").name)
-	show.push(document.getElementById("26000019").value)
-	elixer.push(elixer_all[document.getElementById("26000019").value])
-	img()
+	value1 = document.getElementById("26000019").value
+	value2 = document.getElementById("26000019").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000049").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000049").name)
-	show.push(document.getElementById("26000049").value)
-	elixer.push(elixer_all[document.getElementById("26000049").value])
-	img()
+	value1 = document.getElementById("26000049").value
+	value2 = document.getElementById("26000049").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000008").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000008").name)
-	show.push(document.getElementById("28000008").value)
-	elixer.push(elixer_all[document.getElementById("28000008").value])
-	img()
+	value1 = document.getElementById("28000008").value
+	value2 = document.getElementById("28000008").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000017").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000017").name)
-	show.push(document.getElementById("28000017").value)
-	elixer.push(elixer_all[document.getElementById("28000017").value])
-	img()
+	value1 = document.getElementById("28000017").value
+	value2 = document.getElementById("28000017").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000000").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000000").name)
-	show.push(document.getElementById("26000000").value)
-	elixer.push(elixer_all[document.getElementById("26000000").value])
-	img()
+	value1 = document.getElementById("26000000").value
+	value2 = document.getElementById("26000000").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000001").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000001").name)
-	show.push(document.getElementById("26000001").value)
-	elixer.push(elixer_all[document.getElementById("26000001").value])
-	img()
+	value1 = document.getElementById("26000001").value
+	value2 = document.getElementById("26000001").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000005").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000005").name)
-	show.push(document.getElementById("26000005").value)
-	elixer.push(elixer_all[document.getElementById("26000005").value])
-	img()
+	value1 = document.getElementById("26000005").value
+	value2 = document.getElementById("26000005").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000041").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000041").name)
-	show.push(document.getElementById("26000041").value)
-	elixer.push(elixer_all[document.getElementById("26000041").value])
-	img()
+	value1 = document.getElementById("26000041").value
+	value2 = document.getElementById("26000041").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000056").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000056").name)
-	show.push(document.getElementById("26000056").value)
-	elixer.push(elixer_all[document.getElementById("26000056").value])
-	img()
+	value1 = document.getElementById("26000056").value
+	value2 = document.getElementById("26000056").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000064").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000064").name)
-	show.push(document.getElementById("26000064").value)
-	elixer.push(elixer_all[document.getElementById("26000064").value])
-	img()
+	value1 = document.getElementById("26000064").value
+	value2 = document.getElementById("26000064").name
+	img(value1,value2)
 }, false);
 document.getElementById("27000000").addEventListener("click", function () {
-	card_name.push(document.getElementById("27000000").name)
-	show.push(document.getElementById("27000000").value)
-	elixer.push(elixer_all[document.getElementById("27000000").value])
-	img()
+	value1 = document.getElementById("27000000").value
+	value2 = document.getElementById("27000000").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000001").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000001").name)
-	show.push(document.getElementById("28000001").value)
-	elixer.push(elixer_all[document.getElementById("28000001").value])
-	img()
+	value1 = document.getElementById("28000001").value
+	value2 = document.getElementById("28000001").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000018").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000018").name)
-	show.push(document.getElementById("28000018").value)
-	elixer.push(elixer_all[document.getElementById("28000018").value])
-	img()
+	value1 = document.getElementById("28000018").value
+	value2 = document.getElementById("28000018").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000080").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000080").name)
-	show.push(document.getElementById("26000080").value)
-	elixer.push(elixer_all[document.getElementById("26000080").value])
-	img()
+	value1 = document.getElementById("26000080").value
+	value2 = document.getElementById("26000080").name
+	img(value1,value2)
 }, false);
 document.getElementById("27000002").addEventListener("click", function () {
-	card_name.push(document.getElementById("27000002").name)
-	show.push(document.getElementById("27000002").value)
-	elixer.push(elixer_all[document.getElementById("27000002").value])
-	img()
+	value1 = document.getElementById("27000002").value
+	value2 = document.getElementById("27000002").name
+	img(value1,value2)
 }, false);
 document.getElementById("27000006").addEventListener("click", function () {
-	card_name.push(document.getElementById("27000006").name)
-	show.push(document.getElementById("27000006").value)
-	elixer.push(elixer_all[document.getElementById("27000006").value])
-	img()
+	value1 = document.getElementById("27000006").value
+	value2 = document.getElementById("27000006").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000008").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000008").name)
-	show.push(document.getElementById("26000008").value)
-	elixer.push(elixer_all[document.getElementById("26000008").value])
-	img()
+	value1 = document.getElementById("26000008").value
+	value2 = document.getElementById("26000008").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000022").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000022").name)
-	show.push(document.getElementById("26000022").value)
-	elixer.push(elixer_all[document.getElementById("26000022").value])
-	img()
+	value1 = document.getElementById("26000022").value
+	value2 = document.getElementById("26000022").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000053").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000053").name)
-	show.push(document.getElementById("26000053").value)
-	elixer.push(elixer_all[document.getElementById("26000053").value])
-	img()
+	value1 = document.getElementById("26000053").value
+	value2 = document.getElementById("26000053").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000024").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000024").name)
-	show.push(document.getElementById("26000024").value)
-	elixer.push(elixer_all[document.getElementById("26000024").value])
-	img()
+	value1 = document.getElementById("26000024").value
+	value2 = document.getElementById("26000024").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000043").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000043").name)
-	show.push(document.getElementById("26000043").value)
-	elixer.push(elixer_all[document.getElementById("26000043").value])
-	img()
+	value1 = document.getElementById("26000043").value
+	value2 = document.getElementById("26000043").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000047").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000047").name)
-	show.push(document.getElementById("26000047").value)
-	elixer.push(elixer_all[document.getElementById("26000047").value])
-	img()
+	value1 = document.getElementById("26000047").value
+	value2 = document.getElementById("26000047").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000016").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000016").name)
-	show.push(document.getElementById("28000016").value)
-	elixer.push(elixer_all[document.getElementById("28000016").value])
-	img()
+	value1 = document.getElementById("28000016").value
+	value2 = document.getElementById("28000016").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000038").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000038").name)
-	show.push(document.getElementById("26000038").value)
-	elixer.push(elixer_all[document.getElementById("26000038").value])
-	img()
+	value1 = document.getElementById("26000038").value
+	value2 = document.getElementById("26000038").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000039").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000039").name)
-	show.push(document.getElementById("26000039").value)
-	elixer.push(elixer_all[document.getElementById("26000039").value])
-	img()
+	value1 = document.getElementById("26000039").value
+	value2 = document.getElementById("26000039").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000040").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000040").name)
-	show.push(document.getElementById("26000040").value)
-	elixer.push(elixer_all[document.getElementById("26000040").value])
-	img()
+	value1 = document.getElementById("26000040").value
+	value2 = document.getElementById("26000040").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000067").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000067").name)
-	show.push(document.getElementById("26000067").value)
-	elixer.push(elixer_all[document.getElementById("26000067").value])
-	img()
+	value1 = document.getElementById("26000067").value
+	value2 = document.getElementById("26000067").name
+	img(value1,value2)
 }, false);
 document.getElementById("27000009").addEventListener("click", function () {
-	card_name.push(document.getElementById("27000009").name)
-	show.push(document.getElementById("27000009").value)
-	elixer.push(elixer_all[document.getElementById("27000009").value])
-	img()
+	value1 = document.getElementById("27000009").value
+	value2 = document.getElementById("27000009").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000014").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000014").name)
-	show.push(document.getElementById("28000014").value)
-	elixer.push(elixer_all[document.getElementById("28000014").value])
-	img()
+	value1 = document.getElementById("28000014").value
+	value2 = document.getElementById("28000014").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000011").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000011").name)
-	show.push(document.getElementById("26000011").value)
-	elixer.push(elixer_all[document.getElementById("26000011").value])
-	img()
+	value1 = document.getElementById("26000011").value
+	value2 = document.getElementById("26000011").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000014").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000014").name)
-	show.push(document.getElementById("26000014").value)
-	elixer.push(elixer_all[document.getElementById("26000014").value])
-	img()
+	value1 = document.getElementById("26000014").value
+	value2 = document.getElementById("26000014").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000018").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000018").name)
-	show.push(document.getElementById("26000018").value)
-	elixer.push(elixer_all[document.getElementById("26000018").value])
-	img()
+	value1 = document.getElementById("26000018").value
+	value2 = document.getElementById("26000018").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000021").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000021").name)
-	show.push(document.getElementById("26000021").value)
-	elixer.push(elixer_all[document.getElementById("26000021").value])
-	img()
+	value1 = document.getElementById("26000021").value
+	value2 = document.getElementById("26000021").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000036").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000036").name)
-	show.push(document.getElementById("26000036").value)
-	elixer.push(elixer_all[document.getElementById("26000036").value])
-	img()
+	value1 = document.getElementById("26000036").value
+	value2 = document.getElementById("26000036").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000052").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000052").name)
-	show.push(document.getElementById("26000052").value)
-	elixer.push(elixer_all[document.getElementById("26000052").value])
-	img()
+	value1 = document.getElementById("26000052").value
+	value2 = document.getElementById("26000052").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000057").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000057").name)
-	show.push(document.getElementById("26000057").value)
-	elixer.push(elixer_all[document.getElementById("26000057").value])
-	img()
+	value1 = document.getElementById("26000057").value
+	value2 = document.getElementById("26000057").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000068").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000068").name)
-	show.push(document.getElementById("26000068").value)
-	elixer.push(elixer_all[document.getElementById("26000068").value])
-	img()
+	value1 = document.getElementById("26000068").value
+	value2 = document.getElementById("26000068").name
+	img(value1,value2)
 }, false);
 document.getElementById("27000004").addEventListener("click", function () {
-	card_name.push(document.getElementById("27000004").name)
-	show.push(document.getElementById("27000004").value)
-	elixer.push(elixer_all[document.getElementById("27000004").value])
-	img()
+	value1 = document.getElementById("27000004").value
+	value2 = document.getElementById("27000004").name
+	img(value1,value2)
 }, false);
 document.getElementById("27000010").addEventListener("click", function () {
-	card_name.push(document.getElementById("27000010").name)
-	show.push(document.getElementById("27000010").value)
-	elixer.push(elixer_all[document.getElementById("27000010").value])
-	img()
+	value1 = document.getElementById("27000010").value
+	value2 = document.getElementById("27000010").name
+	img(value1,value2)
 }, false);
 document.getElementById("27000012").addEventListener("click", function () {
-	card_name.push(document.getElementById("27000012").name)
-	show.push(document.getElementById("27000012").value)
-	elixer.push(elixer_all[document.getElementById("27000012").value])
-	img()
+	value1 = document.getElementById("27000012").value
+	value2 = document.getElementById("27000012").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000000").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000000").name)
-	show.push(document.getElementById("28000000").value)
-	elixer.push(elixer_all[document.getElementById("28000000").value])
-	img()
+	value1 = document.getElementById("28000000").value
+	value2 = document.getElementById("28000000").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000003").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000003").name)
-	show.push(document.getElementById("26000003").value)
-	elixer.push(elixer_all[document.getElementById("26000003").value])
-	img()
+	value1 = document.getElementById("26000003").value
+	value2 = document.getElementById("26000003").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000017").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000017").name)
-	show.push(document.getElementById("26000017").value)
-	elixer.push(elixer_all[document.getElementById("26000017").value])
-	img()
+	value1 = document.getElementById("26000017").value
+	value2 = document.getElementById("26000017").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000059").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000059").name)
-	show.push(document.getElementById("26000059").value)
-	elixer.push(elixer_all[document.getElementById("26000059").value])
-	img()
+	value1 = document.getElementById("26000059").value
+	value2 = document.getElementById("26000059").name
+	img(value1,value2)
 }, false);
 document.getElementById("27000001").addEventListener("click", function () {
-	card_name.push(document.getElementById("27000001").name)
-	show.push(document.getElementById("27000001").value)
-	elixer.push(elixer_all[document.getElementById("27000001").value])
-	img()
+	value1 = document.getElementById("27000001").value
+	value2 = document.getElementById("27000001").name
+	img(value1,value2)
 }, false);
 document.getElementById("27000003").addEventListener("click", function () {
-	card_name.push(document.getElementById("27000003").name)
-	show.push(document.getElementById("27000003").value)
-	elixer.push(elixer_all[document.getElementById("27000003").value])
-	img()
+	value1 = document.getElementById("27000003").value
+	value2 = document.getElementById("27000003").name
+	img(value1,value2)
 }, false);
 document.getElementById("27000007").addEventListener("click", function () {
-	card_name.push(document.getElementById("27000007").name)
-	show.push(document.getElementById("27000007").value)
-	elixer.push(elixer_all[document.getElementById("27000007").value])
-	img()
+	value1 = document.getElementById("27000007").value
+	value2 = document.getElementById("27000007").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000003").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000003").name)
-	show.push(document.getElementById("28000003").value)
-	elixer.push(elixer_all[document.getElementById("28000003").value])
-	img()
+	value1 = document.getElementById("28000003").value
+	value2 = document.getElementById("28000003").name
+	img(value1,value2)
 }, false);
 document.getElementById("27000005").addEventListener("click", function () {
-	card_name.push(document.getElementById("27000005").name)
-	show.push(document.getElementById("27000005").value)
-	elixer.push(elixer_all[document.getElementById("27000005").value])
-	img()
+	value1 = document.getElementById("27000005").value
+	value2 = document.getElementById("27000005").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000028").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000028").name)
-	show.push(document.getElementById("26000028").value)
-	elixer.push(elixer_all[document.getElementById("26000028").value])
-	img()
+	value1 = document.getElementById("26000028").value
+	value2 = document.getElementById("26000028").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000058").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000058").name)
-	show.push(document.getElementById("26000058").value)
-	elixer.push(elixer_all[document.getElementById("26000058").value])
-	img()
+	value1 = document.getElementById("26000058").value
+	value2 = document.getElementById("26000058").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000002").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000002").name)
-	show.push(document.getElementById("28000002").value)
-	elixer.push(elixer_all[document.getElementById("28000002").value])
-	img()
+	value1 = document.getElementById("28000002").value
+	value2 = document.getElementById("28000002").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000015").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000015").name)
-	show.push(document.getElementById("28000015").value)
-	elixer.push(elixer_all[document.getElementById("28000015").value])
-	img()
+	value1 = document.getElementById("28000015").value
+	value2 = document.getElementById("28000015").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000012").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000012").name)
-	show.push(document.getElementById("26000012").value)
-	elixer.push(elixer_all[document.getElementById("26000012").value])
-	img()
+	value1 = document.getElementById("26000012").value
+	value2 = document.getElementById("26000012").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000025").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000025").name)
-	show.push(document.getElementById("26000025").value)
-	elixer.push(elixer_all[document.getElementById("26000025").value])
-	img()
+	value1 = document.getElementById("26000025").value
+	value2 = document.getElementById("26000025").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000004").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000004").name)
-	show.push(document.getElementById("28000004").value)
-	elixer.push(elixer_all[document.getElementById("28000004").value])
-	img()
+	value1 = document.getElementById("28000004").value
+	value2 = document.getElementById("28000004").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000012").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000012").name)
-	show.push(document.getElementById("28000012").value)
-	elixer.push(elixer_all[document.getElementById("28000012").value])
-	img()
+	value1 = document.getElementById("28000012").value
+	value2 = document.getElementById("28000012").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000013").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000013").name)
-	show.push(document.getElementById("28000013").value)
-	elixer.push(elixer_all[document.getElementById("28000013").value])
-	img()
+	value1 = document.getElementById("28000013").value
+	value2 = document.getElementById("28000013").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000015").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000015").name)
-	show.push(document.getElementById("26000015").value)
-	elixer.push(elixer_all[document.getElementById("26000015").value])
-	img()
+	value1 = document.getElementById("26000015").value
+	value2 = document.getElementById("26000015").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000027").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000027").name)
-	show.push(document.getElementById("26000027").value)
-	elixer.push(elixer_all[document.getElementById("26000027").value])
-	img()
+	value1 = document.getElementById("26000027").value
+	value2 = document.getElementById("26000027").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000044").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000044").name)
-	show.push(document.getElementById("26000044").value)
-	elixer.push(elixer_all[document.getElementById("26000044").value])
-	img()
+	value1 = document.getElementById("26000044").value
+	value2 = document.getElementById("26000044").name
+	img(value1,value2)
 }, false);
 document.getElementById("27000013").addEventListener("click", function () {
-	card_name.push(document.getElementById("27000013").name)
-	show.push(document.getElementById("27000013").value)
-	elixer.push(elixer_all[document.getElementById("27000013").value])
-	img()
+	value1 = document.getElementById("27000013").value
+	value2 = document.getElementById("27000013").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000005").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000005").name)
-	show.push(document.getElementById("28000005").value)
-	elixer.push(elixer_all[document.getElementById("28000005").value])
-	img()
+	value1 = document.getElementById("28000005").value
+	value2 = document.getElementById("28000005").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000009").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000009").name)
-	show.push(document.getElementById("28000009").value)
-	elixer.push(elixer_all[document.getElementById("28000009").value])
-	img()
+	value1 = document.getElementById("28000009").value
+	value2 = document.getElementById("28000009").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000006").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000006").name)
-	show.push(document.getElementById("26000006").value)
-	elixer.push(elixer_all[document.getElementById("26000006").value])
-	img()
+	value1 = document.getElementById("26000006").value
+	value2 = document.getElementById("26000006").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000007").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000007").name)
-	show.push(document.getElementById("26000007").value)
-	elixer.push(elixer_all[document.getElementById("26000007").value])
-	img()
+	value1 = document.getElementById("26000007").value
+	value2 = document.getElementById("26000007").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000016").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000016").name)
-	show.push(document.getElementById("26000016").value)
-	elixer.push(elixer_all[document.getElementById("26000016").value])
-	img()
+	value1 = document.getElementById("26000016").value
+	value2 = document.getElementById("26000016").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000034").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000034").name)
-	show.push(document.getElementById("26000034").value)
-	elixer.push(elixer_all[document.getElementById("26000034").value])
-	img()
+	value1 = document.getElementById("26000034").value
+	value2 = document.getElementById("26000034").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000045").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000045").name)
-	show.push(document.getElementById("26000045").value)
-	elixer.push(elixer_all[document.getElementById("26000045").value])
-	img()
+	value1 = document.getElementById("26000045").value
+	value2 = document.getElementById("26000045").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000054").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000054").name)
-	show.push(document.getElementById("26000054").value)
-	elixer.push(elixer_all[document.getElementById("26000054").value])
-	img()
+	value1 = document.getElementById("26000054").value
+	value2 = document.getElementById("26000054").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000063").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000063").name)
-	show.push(document.getElementById("26000063").value)
-	elixer.push(elixer_all[document.getElementById("26000063").value])
-	img()
+	value1 = document.getElementById("26000063").value
+	value2 = document.getElementById("26000063").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000020").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000020").name)
-	show.push(document.getElementById("26000020").value)
-	elixer.push(elixer_all[document.getElementById("26000020").value])
-	img()
+	value1 = document.getElementById("26000020").value
+	value2 = document.getElementById("26000020").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000060").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000060").name)
-	show.push(document.getElementById("26000060").value)
-	elixer.push(elixer_all[document.getElementById("26000060").value])
-	img()
+	value1 = document.getElementById("26000060").value
+	value2 = document.getElementById("26000060").name
+	img(value1,value2)
 }, false);
 document.getElementById("27000008").addEventListener("click", function () {
-	card_name.push(document.getElementById("27000008").name)
-	show.push(document.getElementById("27000008").value)
-	elixer.push(elixer_all[document.getElementById("27000008").value])
-	img()
+	value1 = document.getElementById("27000008").value
+	value2 = document.getElementById("27000008").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000007").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000007").name)
-	show.push(document.getElementById("28000007").value)
-	elixer.push(elixer_all[document.getElementById("28000007").value])
-	img()
+	value1 = document.getElementById("28000007").value
+	value2 = document.getElementById("28000007").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000004").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000004").name)
-	show.push(document.getElementById("26000004").value)
-	elixer.push(elixer_all[document.getElementById("26000004").value])
-	img()
+	value1 = document.getElementById("26000004").value
+	value2 = document.getElementById("26000004").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000009").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000009").name)
-	show.push(document.getElementById("26000009").value)
-	elixer.push(elixer_all[document.getElementById("26000009").value])
-	img()
+	value1 = document.getElementById("26000009").value
+	value2 = document.getElementById("26000009").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000085").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000085").name)
-	show.push(document.getElementById("26000085").value)
-	elixer.push(elixer_all[document.getElementById("26000085").value])
-	img()
+	value1 = document.getElementById("26000085").value
+	value2 = document.getElementById("26000085").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000006").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000006").name)
-	show.push(document.getElementById("28000006").value)
-	elixer.push(elixer_all[document.getElementById("28000006").value])
-	img()
+	value1 = document.getElementById("28000006").value
+	value2 = document.getElementById("28000006").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000011").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000011").name)
-	show.push(document.getElementById("28000011").value)
-	elixer.push(elixer_all[document.getElementById("28000011").value])
-	img()
+	value1 = document.getElementById("28000011").value
+	value2 = document.getElementById("28000011").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000023").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000023").name)
-	show.push(document.getElementById("26000023").value)
-	elixer.push(elixer_all[document.getElementById("26000023").value])
-	img()
+	value1 = document.getElementById("26000023").value
+	value2 = document.getElementById("26000023").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000026").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000026").name)
-	show.push(document.getElementById("26000026").value)
-	elixer.push(elixer_all[document.getElementById("26000026").value])
-	img()
+	value1 = document.getElementById("26000026").value
+	value2 = document.getElementById("26000026").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000032").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000032").name)
-	show.push(document.getElementById("26000032").value)
-	elixer.push(elixer_all[document.getElementById("26000032").value])
-	img()
+	value1 = document.getElementById("26000032").value
+	value2 = document.getElementById("26000032").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000046").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000046").name)
-	show.push(document.getElementById("26000046").value)
-	elixer.push(elixer_all[document.getElementById("26000046").value])
-	img()
+	value1 = document.getElementById("26000046").value
+	value2 = document.getElementById("26000046").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000050").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000050").name)
-	show.push(document.getElementById("26000050").value)
-	elixer.push(elixer_all[document.getElementById("26000050").value])
-	img()
+	value1 = document.getElementById("26000050").value
+	value2 = document.getElementById("26000050").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000061").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000061").name)
-	show.push(document.getElementById("26000061").value)
-	elixer.push(elixer_all[document.getElementById("26000061").value])
-	img()
+	value1 = document.getElementById("26000061").value
+	value2 = document.getElementById("26000061").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000035").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000035").name)
-	show.push(document.getElementById("26000035").value)
-	elixer.push(elixer_all[document.getElementById("26000035").value])
-	img()
+	value1 = document.getElementById("26000035").value
+	value2 = document.getElementById("26000035").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000037").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000037").name)
-	show.push(document.getElementById("26000037").value)
-	elixer.push(elixer_all[document.getElementById("26000037").value])
-	img()
+	value1 = document.getElementById("26000037").value
+	value2 = document.getElementById("26000037").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000042").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000042").name)
-	show.push(document.getElementById("26000042").value)
-	elixer.push(elixer_all[document.getElementById("26000042").value])
-	img()
+	value1 = document.getElementById("26000042").value
+	value2 = document.getElementById("26000042").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000048").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000048").name)
-	show.push(document.getElementById("26000048").value)
-	elixer.push(elixer_all[document.getElementById("26000048").value])
-	img()
+	value1 = document.getElementById("26000048").value
+	value2 = document.getElementById("26000048").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000062").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000062").name)
-	show.push(document.getElementById("26000062").value)
-	elixer.push(elixer_all[document.getElementById("26000062").value])
-	img()
+	value1 = document.getElementById("26000062").value
+	value2 = document.getElementById("26000062").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000083").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000083").name)
-	show.push(document.getElementById("26000083").value)
-	elixer.push(elixer_all[document.getElementById("26000083").value])
-	img()
+	value1 = document.getElementById("26000083").value
+	value2 = document.getElementById("26000083").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000051").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000051").name)
-	show.push(document.getElementById("26000051").value)
-	elixer.push(elixer_all[document.getElementById("26000051").value])
-	img()
+	value1 = document.getElementById("26000051").value
+	value2 = document.getElementById("26000051").name
+	img(value1,value2)
 }, false);
 document.getElementById("28000010").addEventListener("click", function () {
-	card_name.push(document.getElementById("28000010").name)
-	show.push(document.getElementById("28000010").value)
-	elixer.push(elixer_all[document.getElementById("28000010").value])
-	img()
+	value1 = document.getElementById("28000010").value
+	value2 = document.getElementById("28000010").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000033").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000033").name)
-	show.push(document.getElementById("26000033").value)
-	elixer.push(elixer_all[document.getElementById("26000033").value])
-	img()
+	value1 = document.getElementById("26000033").value
+	value2 = document.getElementById("26000033").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000029").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000029").name)
-	show.push(document.getElementById("26000029").value)
-	elixer.push(elixer_all[document.getElementById("26000029").value])
-	img()
+	value1 = document.getElementById("26000029").value
+	value2 = document.getElementById("26000029").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000055").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000055").name)
-	show.push(document.getElementById("26000055").value)
-	elixer.push(elixer_all[document.getElementById("26000055").value])
-	img()
+	value1 = document.getElementById("26000055").value
+	value2 = document.getElementById("26000055").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000069").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000069").name)
-	show.push(document.getElementById("26000069").value)
-	elixer.push(elixer_all[document.getElementById("26000069").value])
-	img()
+	value1 = document.getElementById("26000069").value
+	value2 = document.getElementById("26000069").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000072").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000072").name)
-	show.push(document.getElementById("26000072").value)
-	elixer.push(elixer_all[document.getElementById("26000072").value])
-	img()
+	value1 = document.getElementById("26000072").value
+	value2 = document.getElementById("26000072").name
+	img(value1,value2)
 }, false);
 document.getElementById("26000074").addEventListener("click", function () {
-	card_name.push(document.getElementById("26000074").name)
-	show.push(document.getElementById("26000074").value)
-	elixer.push(elixer_all[document.getElementById("26000074").value])
-	img()
+	value1 = document.getElementById("26000074").value
+	value2 = document.getElementById("26000074").name
+	img(value1,value2)
 }, false);
