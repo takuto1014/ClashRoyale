@@ -86,7 +86,7 @@ elixer_all[28000007]=6
 elixer_all[26000004]=7
 elixer_all[26000009]=8
 elixer_all[26000085]=8
-elixer_all[28000006]=
+elixer_all[28000006]=1
 elixer_all[28000011]=2
 elixer_all[26000023]=3
 elixer_all[26000026]=3
@@ -140,22 +140,23 @@ function img(c,d){
 		let img_7 = document.getElementById("img_7");
 		img_7.src = card7;
 		if(show.length==9){
-			show.splice(-1,1);
+			show.pop();
+			show.pop();
 		}
 		if(elixer.length==9){
-			elixer.splice(-1,1);
+			elixer.pop();
 		}
 		if(card_name.length==9){
-			card_name.splice(-1,1);
+			card_name.pop();
 		}
 		elixer_number = 0
 		for(a=0;a<elixer.length;a++){
 			elixer_number += Number(elixer[a])
 		}
-		document.getElementById("elixer").innerText = Math.round(Number(elixer_number)/Number(elixer.length)*10)/10
+		document.getElementById("elixer").innerText = Math.ceil(Number(elixer_number)/Number(elixer.length)*10)/10
 		//4カードサイクル
 		if(elixer.length>3){
-			elixer2 = elixer
+			var elixer2 = elixer.slice();
 			elixer2.sort()
 			document.getElementById("cycle").innerText =elixer2[0]+elixer2[1]+elixer2[2]+elixer2[3]
 		}
@@ -188,10 +189,66 @@ document.getElementById("search").addEventListener("click", function () {
 
 }, false);
 document.getElementById("1_delete").addEventListener("click", function () {
-	card_name.splice(-1,1);
-    show.splice(-1,1);
-    elixer.splice(-1,1);
-    img()
+	card_name.pop();
+    show.pop();
+    elixer.pop();
+	// alert(elixer)
+	card0 = show[0]+".png";
+	card1 = show[1]+".png";
+	card2 = show[2]+".png";
+	card3 = show[3]+".png";
+	card4 = show[4]+".png";
+	card5 = show[5]+".png";
+	card6 = show[6]+".png";
+	card7 = show[7]+".png";
+
+	let img_0 = document.getElementById("img_0");
+	img_0.src = card0;
+	let img_1 = document.getElementById("img_1");
+	img_1.src = card1;
+	let img_2 = document.getElementById("img_2");
+	img_2.src = card2;
+	let img_3 = document.getElementById("img_3");
+	img_3.src = card3;
+	let img_4 = document.getElementById("img_4");
+	img_4.src = card4;
+	let img_5 = document.getElementById("img_5");
+	img_5.src = card5;
+	let img_6 = document.getElementById("img_6");
+	img_6.src = card6;
+	let img_7 = document.getElementById("img_7");
+	img_7.src = card7;
+	elixer_number = 0
+	for(a=0;a<elixer.length;a++){
+		elixer_number += Number(elixer[a])
+	}
+	document.getElementById("elixer").innerText = Math.ceil(Number(elixer_number)/Number(elixer.length)*10)/10
+	
+	//4カードサイクル
+	if(elixer.length>3){
+		var elixer2 = elixer.slice();
+		elixer2.sort()
+		document.getElementById("cycle").innerText = elixer2[0]+elixer2[1]+elixer2[2]+elixer2[3]
+	}else{
+		document.getElementById("cycle").innerText = ""
+	}
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	
     if(show.length==0){  
         card = "white.png";
         let img_0 = document.getElementById("img_0");
