@@ -108,12 +108,18 @@ elixer_all[26000055]=7
 elixer_all[26000069]=4
 elixer_all[26000072]=5
 elixer_all[26000074]=4
-function img(c,d){
+function func1(c,d){
 	if(show.indexOf(c) === -1){
 		card_name.push(d)
 		show.push(c)
 		// alert(card_name)
 		elixer.push(elixer_all[c])
+
+		for(e=0;e<show.length;e++){
+			localStorage.setItem(e,show[e])
+			localStorage.setItem("number",show.length)
+		}
+		
 		card0 = show[0]+".png";
 		card1 = show[1]+".png";
 		card2 = show[2]+".png";
@@ -162,37 +168,12 @@ function img(c,d){
 		}
 	}
 }
-
-
-//初期設定(ローカルストレージから前回までのやつ更新)
-number = localStorage.getItem("number")
-for(f=0;f<number;f++){
-	g=localStorage.getItem(f)
-	h=document.getElementById(g).name
-	img(g,h)
-}
-
-
-document.getElementById("search").addEventListener("click", function () {
-	localStorage.clear()
+function func2(){
+	// alert(elixer)
 	for(e=0;e<show.length;e++){
         localStorage.setItem(e,show[e])
 		localStorage.setItem("number",show.length)
     }
-    search_href = "https://royaleapi.com/decks/popular?time=7d&sort=rating&size=20&players=PvP&min_trophies=0&max_trophies=10000&min_elixir=1&max_elixir=9&min_cycle_elixir=4&max_cycle_elixir=28&mode=detail&type=NormalBattle&"
-    // inc=skeletons&inc=ice-spirit&&global_exclude=false
-    for(b=0;b<card_name.length;b++){
-        search_href += "inc="+card_name[b]+"&"
-    }
-    search_href += "&global_exclude=false"
-    location = search_href
-
-}, false);
-document.getElementById("1_delete").addEventListener("click", function () {
-	card_name.pop();
-    show.pop();
-    elixer.pop();
-	// alert(elixer)
 	card0 = show[0]+".png";
 	card1 = show[1]+".png";
 	card2 = show[2]+".png";
@@ -232,22 +213,6 @@ document.getElementById("1_delete").addEventListener("click", function () {
 	}else{
 		document.getElementById("cycle").innerText = ""
 	}
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	//---------------------------------------------------------------------------------------------------------------------------------------------
 	
     if(show.length==0){  
         card = "white.png";
@@ -271,6 +236,38 @@ document.getElementById("1_delete").addEventListener("click", function () {
 		document.getElementById("cycle").innerText = ""
 	
     }
+}
+
+//初期設定(ローカルストレージから前回までのやつ更新)
+number = localStorage.getItem("number")
+for(f=0;f<number;f++){
+	g=localStorage.getItem(f)
+	h=document.getElementById(g).name
+	func1(g,h)
+}
+
+
+document.getElementById("search").addEventListener("click", function () {
+	localStorage.clear()
+	for(e=0;e<show.length;e++){
+        localStorage.setItem(e,show[e])
+		localStorage.setItem("number",show.length)
+    }
+    search_href = "https://royaleapi.com/decks/popular?time=7d&sort=rating&size=20&players=PvP&min_trophies=0&max_trophies=10000&min_elixir=1&max_elixir=9&min_cycle_elixir=4&max_cycle_elixir=28&mode=detail&type=NormalBattle&"
+    // inc=skeletons&inc=ice-spirit&&global_exclude=false
+    for(b=0;b<card_name.length;b++){
+        search_href += "inc="+card_name[b]+"&"
+    }
+    search_href += "&global_exclude=false"
+    location = search_href
+
+}, false);
+document.getElementById("1_delete").addEventListener("click", function () {
+	card_name.pop();
+    show.pop();
+    elixer.pop();
+	// alert(elixer)
+	func2()
 }, false);
 document.getElementById("all_delete").addEventListener("click", function () {
 	localStorage.clear()
@@ -296,535 +293,586 @@ document.getElementById("all_delete").addEventListener("click", function () {
     img_7.src = card;
     document.getElementById("elixer").innerText = ""
 	document.getElementById("cycle").innerText =""
-    // img()
+    // func1()
 }, false);
+
+document.getElementById("img-0").addEventListener("click", function () {
+	card_name.splice(0,1);
+    show.splice(0,1);
+    elixer.splice(0,1);
+	func2()
+}, false);
+document.getElementById("img-1").addEventListener("click", function () {
+	card_name.splice(1,1);
+    show.splice(1,1);
+    elixer.splice(1,1);
+	func2()
+}, false);
+document.getElementById("img-2").addEventListener("click", function () {
+	card_name.splice(2,1);
+    show.splice(2,1);
+    elixer.splice(2,1);
+	func2()
+}, false);
+document.getElementById("img-3").addEventListener("click", function () {
+	card_name.splice(3,1);
+    show.splice(3,1);
+    elixer.splice(3,1);
+	func2()
+}, false);
+document.getElementById("img-4").addEventListener("click", function () {
+	card_name.splice(4,1);
+    show.splice(4,1);
+    elixer.splice(4,1);
+	func2()
+}, false);
+document.getElementById("img-5").addEventListener("click", function () {
+	card_name.splice(5,1);
+    show.splice(5,1);
+    elixer.splice(5,1);
+	func2()
+}, false);
+document.getElementById("img-6").addEventListener("click", function () {
+	card_name.splice(6,1);
+    show.splice(6,1);
+    elixer.splice(6,1);
+	func2()
+}, false);
+document.getElementById("img-7").addEventListener("click", function () {
+	card_name.splice(7,1);
+    show.splice(7,1);
+    elixer.splice(7,1);
+	func2()
+}, false);
+
+
 document.getElementById("26000010").addEventListener("click", function () {
 	value1 = document.getElementById("26000010").value
 	value2 = document.getElementById("26000010").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000030").addEventListener("click", function () {
     value1 = document.getElementById("26000030").value
     value2 = document.getElementById("26000030").name
-    img(value1,value2)
+    func1(value1,value2)
 }, false);
 document.getElementById("26000031").addEventListener("click", function () {
 	value1 = document.getElementById("26000031").value
 	value2 = document.getElementById("26000031").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000084").addEventListener("click", function () {
 	value1 = document.getElementById("26000084").value
 	value2 = document.getElementById("26000084").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000002").addEventListener("click", function () {
 	value1 = document.getElementById("26000002").value
 	value2 = document.getElementById("26000002").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000013").addEventListener("click", function () {
 	value1 = document.getElementById("26000013").value
 	value2 = document.getElementById("26000013").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000019").addEventListener("click", function () {
 	value1 = document.getElementById("26000019").value
 	value2 = document.getElementById("26000019").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000049").addEventListener("click", function () {
 	value1 = document.getElementById("26000049").value
 	value2 = document.getElementById("26000049").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000008").addEventListener("click", function () {
 	value1 = document.getElementById("28000008").value
 	value2 = document.getElementById("28000008").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000017").addEventListener("click", function () {
 	value1 = document.getElementById("28000017").value
 	value2 = document.getElementById("28000017").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000000").addEventListener("click", function () {
 	value1 = document.getElementById("26000000").value
 	value2 = document.getElementById("26000000").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000001").addEventListener("click", function () {
 	value1 = document.getElementById("26000001").value
 	value2 = document.getElementById("26000001").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000005").addEventListener("click", function () {
 	value1 = document.getElementById("26000005").value
 	value2 = document.getElementById("26000005").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000041").addEventListener("click", function () {
 	value1 = document.getElementById("26000041").value
 	value2 = document.getElementById("26000041").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000056").addEventListener("click", function () {
 	value1 = document.getElementById("26000056").value
 	value2 = document.getElementById("26000056").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000064").addEventListener("click", function () {
 	value1 = document.getElementById("26000064").value
 	value2 = document.getElementById("26000064").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("27000000").addEventListener("click", function () {
 	value1 = document.getElementById("27000000").value
 	value2 = document.getElementById("27000000").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000001").addEventListener("click", function () {
 	value1 = document.getElementById("28000001").value
 	value2 = document.getElementById("28000001").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000018").addEventListener("click", function () {
 	value1 = document.getElementById("28000018").value
 	value2 = document.getElementById("28000018").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000080").addEventListener("click", function () {
 	value1 = document.getElementById("26000080").value
 	value2 = document.getElementById("26000080").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("27000002").addEventListener("click", function () {
 	value1 = document.getElementById("27000002").value
 	value2 = document.getElementById("27000002").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("27000006").addEventListener("click", function () {
 	value1 = document.getElementById("27000006").value
 	value2 = document.getElementById("27000006").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000008").addEventListener("click", function () {
 	value1 = document.getElementById("26000008").value
 	value2 = document.getElementById("26000008").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000022").addEventListener("click", function () {
 	value1 = document.getElementById("26000022").value
 	value2 = document.getElementById("26000022").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000053").addEventListener("click", function () {
 	value1 = document.getElementById("26000053").value
 	value2 = document.getElementById("26000053").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000024").addEventListener("click", function () {
 	value1 = document.getElementById("26000024").value
 	value2 = document.getElementById("26000024").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000043").addEventListener("click", function () {
 	value1 = document.getElementById("26000043").value
 	value2 = document.getElementById("26000043").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000047").addEventListener("click", function () {
 	value1 = document.getElementById("26000047").value
 	value2 = document.getElementById("26000047").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000016").addEventListener("click", function () {
 	value1 = document.getElementById("28000016").value
 	value2 = document.getElementById("28000016").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000038").addEventListener("click", function () {
 	value1 = document.getElementById("26000038").value
 	value2 = document.getElementById("26000038").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000039").addEventListener("click", function () {
 	value1 = document.getElementById("26000039").value
 	value2 = document.getElementById("26000039").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000040").addEventListener("click", function () {
 	value1 = document.getElementById("26000040").value
 	value2 = document.getElementById("26000040").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000067").addEventListener("click", function () {
 	value1 = document.getElementById("26000067").value
 	value2 = document.getElementById("26000067").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("27000009").addEventListener("click", function () {
 	value1 = document.getElementById("27000009").value
 	value2 = document.getElementById("27000009").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000014").addEventListener("click", function () {
 	value1 = document.getElementById("28000014").value
 	value2 = document.getElementById("28000014").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000011").addEventListener("click", function () {
 	value1 = document.getElementById("26000011").value
 	value2 = document.getElementById("26000011").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000014").addEventListener("click", function () {
 	value1 = document.getElementById("26000014").value
 	value2 = document.getElementById("26000014").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000018").addEventListener("click", function () {
 	value1 = document.getElementById("26000018").value
 	value2 = document.getElementById("26000018").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000021").addEventListener("click", function () {
 	value1 = document.getElementById("26000021").value
 	value2 = document.getElementById("26000021").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000036").addEventListener("click", function () {
 	value1 = document.getElementById("26000036").value
 	value2 = document.getElementById("26000036").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000052").addEventListener("click", function () {
 	value1 = document.getElementById("26000052").value
 	value2 = document.getElementById("26000052").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000057").addEventListener("click", function () {
 	value1 = document.getElementById("26000057").value
 	value2 = document.getElementById("26000057").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000068").addEventListener("click", function () {
 	value1 = document.getElementById("26000068").value
 	value2 = document.getElementById("26000068").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("27000004").addEventListener("click", function () {
 	value1 = document.getElementById("27000004").value
 	value2 = document.getElementById("27000004").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("27000010").addEventListener("click", function () {
 	value1 = document.getElementById("27000010").value
 	value2 = document.getElementById("27000010").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("27000012").addEventListener("click", function () {
 	value1 = document.getElementById("27000012").value
 	value2 = document.getElementById("27000012").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000000").addEventListener("click", function () {
 	value1 = document.getElementById("28000000").value
 	value2 = document.getElementById("28000000").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000003").addEventListener("click", function () {
 	value1 = document.getElementById("26000003").value
 	value2 = document.getElementById("26000003").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000017").addEventListener("click", function () {
 	value1 = document.getElementById("26000017").value
 	value2 = document.getElementById("26000017").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000059").addEventListener("click", function () {
 	value1 = document.getElementById("26000059").value
 	value2 = document.getElementById("26000059").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("27000001").addEventListener("click", function () {
 	value1 = document.getElementById("27000001").value
 	value2 = document.getElementById("27000001").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("27000003").addEventListener("click", function () {
 	value1 = document.getElementById("27000003").value
 	value2 = document.getElementById("27000003").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("27000007").addEventListener("click", function () {
 	value1 = document.getElementById("27000007").value
 	value2 = document.getElementById("27000007").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000003").addEventListener("click", function () {
 	value1 = document.getElementById("28000003").value
 	value2 = document.getElementById("28000003").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("27000005").addEventListener("click", function () {
 	value1 = document.getElementById("27000005").value
 	value2 = document.getElementById("27000005").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000028").addEventListener("click", function () {
 	value1 = document.getElementById("26000028").value
 	value2 = document.getElementById("26000028").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000058").addEventListener("click", function () {
 	value1 = document.getElementById("26000058").value
 	value2 = document.getElementById("26000058").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000002").addEventListener("click", function () {
 	value1 = document.getElementById("28000002").value
 	value2 = document.getElementById("28000002").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000015").addEventListener("click", function () {
 	value1 = document.getElementById("28000015").value
 	value2 = document.getElementById("28000015").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000012").addEventListener("click", function () {
 	value1 = document.getElementById("26000012").value
 	value2 = document.getElementById("26000012").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000025").addEventListener("click", function () {
 	value1 = document.getElementById("26000025").value
 	value2 = document.getElementById("26000025").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000004").addEventListener("click", function () {
 	value1 = document.getElementById("28000004").value
 	value2 = document.getElementById("28000004").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000012").addEventListener("click", function () {
 	value1 = document.getElementById("28000012").value
 	value2 = document.getElementById("28000012").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000013").addEventListener("click", function () {
 	value1 = document.getElementById("28000013").value
 	value2 = document.getElementById("28000013").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000015").addEventListener("click", function () {
 	value1 = document.getElementById("26000015").value
 	value2 = document.getElementById("26000015").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000027").addEventListener("click", function () {
 	value1 = document.getElementById("26000027").value
 	value2 = document.getElementById("26000027").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000044").addEventListener("click", function () {
 	value1 = document.getElementById("26000044").value
 	value2 = document.getElementById("26000044").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("27000013").addEventListener("click", function () {
 	value1 = document.getElementById("27000013").value
 	value2 = document.getElementById("27000013").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000005").addEventListener("click", function () {
 	value1 = document.getElementById("28000005").value
 	value2 = document.getElementById("28000005").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000009").addEventListener("click", function () {
 	value1 = document.getElementById("28000009").value
 	value2 = document.getElementById("28000009").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000006").addEventListener("click", function () {
 	value1 = document.getElementById("26000006").value
 	value2 = document.getElementById("26000006").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000007").addEventListener("click", function () {
 	value1 = document.getElementById("26000007").value
 	value2 = document.getElementById("26000007").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000016").addEventListener("click", function () {
 	value1 = document.getElementById("26000016").value
 	value2 = document.getElementById("26000016").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000034").addEventListener("click", function () {
 	value1 = document.getElementById("26000034").value
 	value2 = document.getElementById("26000034").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000045").addEventListener("click", function () {
 	value1 = document.getElementById("26000045").value
 	value2 = document.getElementById("26000045").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000054").addEventListener("click", function () {
 	value1 = document.getElementById("26000054").value
 	value2 = document.getElementById("26000054").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000063").addEventListener("click", function () {
 	value1 = document.getElementById("26000063").value
 	value2 = document.getElementById("26000063").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000020").addEventListener("click", function () {
 	value1 = document.getElementById("26000020").value
 	value2 = document.getElementById("26000020").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000060").addEventListener("click", function () {
 	value1 = document.getElementById("26000060").value
 	value2 = document.getElementById("26000060").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("27000008").addEventListener("click", function () {
 	value1 = document.getElementById("27000008").value
 	value2 = document.getElementById("27000008").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000007").addEventListener("click", function () {
 	value1 = document.getElementById("28000007").value
 	value2 = document.getElementById("28000007").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000004").addEventListener("click", function () {
 	value1 = document.getElementById("26000004").value
 	value2 = document.getElementById("26000004").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000009").addEventListener("click", function () {
 	value1 = document.getElementById("26000009").value
 	value2 = document.getElementById("26000009").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000085").addEventListener("click", function () {
 	value1 = document.getElementById("26000085").value
 	value2 = document.getElementById("26000085").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000006").addEventListener("click", function () {
 	value1 = document.getElementById("28000006").value
 	value2 = document.getElementById("28000006").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000011").addEventListener("click", function () {
 	value1 = document.getElementById("28000011").value
 	value2 = document.getElementById("28000011").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000023").addEventListener("click", function () {
 	value1 = document.getElementById("26000023").value
 	value2 = document.getElementById("26000023").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000026").addEventListener("click", function () {
 	value1 = document.getElementById("26000026").value
 	value2 = document.getElementById("26000026").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000032").addEventListener("click", function () {
 	value1 = document.getElementById("26000032").value
 	value2 = document.getElementById("26000032").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000046").addEventListener("click", function () {
 	value1 = document.getElementById("26000046").value
 	value2 = document.getElementById("26000046").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000050").addEventListener("click", function () {
 	value1 = document.getElementById("26000050").value
 	value2 = document.getElementById("26000050").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000061").addEventListener("click", function () {
 	value1 = document.getElementById("26000061").value
 	value2 = document.getElementById("26000061").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000035").addEventListener("click", function () {
 	value1 = document.getElementById("26000035").value
 	value2 = document.getElementById("26000035").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000037").addEventListener("click", function () {
 	value1 = document.getElementById("26000037").value
 	value2 = document.getElementById("26000037").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000042").addEventListener("click", function () {
 	value1 = document.getElementById("26000042").value
 	value2 = document.getElementById("26000042").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000048").addEventListener("click", function () {
 	value1 = document.getElementById("26000048").value
 	value2 = document.getElementById("26000048").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000062").addEventListener("click", function () {
 	value1 = document.getElementById("26000062").value
 	value2 = document.getElementById("26000062").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000083").addEventListener("click", function () {
 	value1 = document.getElementById("26000083").value
 	value2 = document.getElementById("26000083").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000051").addEventListener("click", function () {
 	value1 = document.getElementById("26000051").value
 	value2 = document.getElementById("26000051").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("28000010").addEventListener("click", function () {
 	value1 = document.getElementById("28000010").value
 	value2 = document.getElementById("28000010").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000033").addEventListener("click", function () {
 	value1 = document.getElementById("26000033").value
 	value2 = document.getElementById("26000033").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000029").addEventListener("click", function () {
 	value1 = document.getElementById("26000029").value
 	value2 = document.getElementById("26000029").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000055").addEventListener("click", function () {
 	value1 = document.getElementById("26000055").value
 	value2 = document.getElementById("26000055").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000069").addEventListener("click", function () {
 	value1 = document.getElementById("26000069").value
 	value2 = document.getElementById("26000069").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000072").addEventListener("click", function () {
 	value1 = document.getElementById("26000072").value
 	value2 = document.getElementById("26000072").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
 document.getElementById("26000074").addEventListener("click", function () {
 	value1 = document.getElementById("26000074").value
 	value2 = document.getElementById("26000074").name
-	img(value1,value2)
+	func1(value1,value2)
 }, false);
