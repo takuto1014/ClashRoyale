@@ -2,6 +2,12 @@ button.button{
     border: none;
     
 }
+button.button0{
+    border:none;
+    width: 10%;
+    padding: -10px;
+    margin: 0 -4px;
+}
 a.cycle{
     margin-left: 15px;
 }
@@ -9,4 +15,10 @@ a.text{
     font-size:1.5em;
     color: rgb(255, 0, 208);
     font-weight: bold;
+}
+img{
+    margin:-6px -11px;
+}
+.button1{
+    height: 2em;
 }

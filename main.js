@@ -246,7 +246,7 @@ for(f=0;f<number;f++){
 	func1(g,h)
 }
 
-
+//検索ボタン
 document.getElementById("search").addEventListener("click", function () {
 	localStorage.clear()
 	for(e=0;e<show.length;e++){
@@ -260,8 +260,26 @@ document.getElementById("search").addEventListener("click", function () {
     }
     search_href += "&global_exclude=false"
     location = search_href
-
 }, false);
+window.document.onkeydown = function(event1){
+    if (event1.key === 'f') {
+		localStorage.clear()
+		for(e=0;e<show.length;e++){
+			localStorage.setItem(e,show[e])
+			localStorage.setItem("number",show.length)
+		}
+		search_href = "https://royaleapi.com/decks/popular?time=7d&sort=rating&size=20&players=PvP&min_trophies=0&max_trophies=10000&min_elixir=1&max_elixir=9&min_cycle_elixir=4&max_cycle_elixir=28&mode=detail&type=NormalBattle&"
+		// inc=skeletons&inc=ice-spirit&&global_exclude=false
+		for(b=0;b<card_name.length;b++){
+			search_href += "inc="+card_name[b]+"&"
+		}
+		search_href += "&global_exclude=false"
+		location = search_href 
+		
+    }
+}
+
+//1つ消去ボタン
 document.getElementById("1_delete").addEventListener("click", function () {
 	card_name.pop();
     show.pop();
@@ -269,6 +287,18 @@ document.getElementById("1_delete").addEventListener("click", function () {
 	// alert(elixer)
 	func2()
 }, false);
+document.addEventListener('keypress', keypress1_ivent);
+function keypress1_ivent(event2) {
+	if(event2.key==="c")
+		card_name.pop();
+		show.pop();
+		elixer.pop();
+		func2()
+		return false; 
+		
+}
+
+//すべて消去
 document.getElementById("all_delete").addEventListener("click", function () {
 	localStorage.clear()
 	show=[];
@@ -295,6 +325,36 @@ document.getElementById("all_delete").addEventListener("click", function () {
 	document.getElementById("cycle").innerText =""
     // func1()
 }, false);
+// document.addEventListener('keypress', keypress2_ivent);
+// function keypress2_ivent(event3) {
+// 	if(event3.key==="d")
+// 		localStorage.clear()
+// 		show=[];
+// 		elixer=[];
+// 		card_name =[];
+// 		card = "white.png";
+// 		let img_0 = document.getElementById("img_0");
+// 		img_0.src = card;
+// 		let img_1 = document.getElementById("img_1");
+// 		img_1.src = card;
+// 		let img_2 = document.getElementById("img_2");
+// 		img_2.src = card;
+// 		let img_3 = document.getElementById("img_3");
+// 		img_3.src = card;
+// 		let img_4 = document.getElementById("img_4");
+// 		img_4.src = card;
+// 		let img_5 = document.getElementById("img_5");
+// 		img_5.src = card;
+// 		let img_6 = document.getElementById("img_6");
+// 		img_6.src = card;
+// 		let img_7 = document.getElementById("img_7");
+// 		img_7.src = card;
+// 		document.getElementById("elixer").innerText = ""
+// 		document.getElementById("cycle").innerText =""
+// 		// func1()
+// 		return false; 
+		
+// }
 
 document.getElementById("img-0").addEventListener("click", function () {
 	card_name.splice(0,1);
