@@ -288,7 +288,6 @@ document.getElementById("1_delete").addEventListener("click", function () {
 	func2()
 }, false);
 document.addEventListener('keypress', keypress1_ivent);
-document.addEventListener('keyup', keyup1_ivent);
 function keypress1_ivent(event2) {
 	if(event2.key==="c")
 		card_name.pop();
